@@ -61,6 +61,7 @@ scaleByteTo359 = (oldValue) ->
 
 onSocketMessage = (s) ->
   msg = JSON.parse s
+  console.log s
   state = lightState.create()
   if msg.data.on then state.on() else state.off()
   if msg.data.on then state.brightness(scaleByteToPercent(msg.data.bri))
